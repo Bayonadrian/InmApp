@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container-fluid text-center">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <p class="fs-2" style="--bs-text-opacity: .9;"><b>{{ post.title }}</b></p>            
+            <img src="{{ post.image.url }}" class="img-fluid" width="550" alt="{{ post.title }}">
+            <br>
+            <p class="text-start fs-5">
+                {{ post.heading }}
+            </p>
+            <br>
+            <p class="text-start fs-4"><b>What is the reason behind this matter?</b></p>   
+            <br>
+            <p class="text-start fs-5">
+                {{ post.reason }}
+            </p>
+            <br>
+            <p class="text-start fs-4"><b>Who is affected?</b></p>   
+            <br>
+            <p class="text-start fs-5">
+                {{ post.affected }}
+            </p>
+            <br>
+            <p class="text-start fs-4"><b>What are the consecuences?</b></p> 
+            <br>
+            <p class="text-start fs-5">
+                {{ post.consecuences }}
+            </p> 
+            <br>
+            <p class="fs-6">{{ post.date }}</p> 
+        </div>
+    </div>    
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load main_filters %}
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <p class="text-center fs-1 text-danger" style="--bs-text-opacity: .9;">Register</p>
+        <div class="col-md-4">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    {{ form.username|add_class:"form-control" }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">First Name</label>
+                    {{ form.first_name|add_class:"form-control" }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Last Name</label>
+                    {{ form.last_name|add_class:"form-control" }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    {{ form.email|add_class:"form-control" }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    {{ form.password1|add_class:"form-control" }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Confirm Password</label>
+                    {{ form.password2|add_class:"form-control" }}
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="termsCheck">
+                    <label class="form-check-label" for="termsCheck">Accept Terms and Conditions</label>
+                </div>
+                <button type="submit" class="btn btn-secondary w-100"><span class="text-light">Register</span></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
